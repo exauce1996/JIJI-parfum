@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>JIJI STORE - Commande</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    img {
+      width: 150px;
+      margin: 20px auto;
+    }
+    input, button {
+      display: block;
+      width: 80%;
+      margin: 10px auto;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Bienvenue chez JIJI STORE</h2>
+  <img src="logo.png" alt="Logo JIJI Store">
+  
+  <p><strong>JIJI STORE</strong> vous présente des parfums de poche de très bonnes qualités</p>
+  <p>💵 Un parfum à 5 $<br>💵 5 parfums à 20 $</p>
+
+  <h3>Passez votre commande</h3>
+
+  <input type="text" id="prenom" placeholder="Entrez votre prénom" required>
+  <input type="text" id="nom" placeholder="Entrez votre nom de famille" required>
+  <input type="text" id="adresse" placeholder="Entrez votre adresse à Kinshasa" required>
+  <input type="tel" id="numero" placeholder="Entrez votre numéro mobile" required>
+  <input type="text" id="commande" placeholder="Entrez votre commande" required>
+
+  <p><strong>NB :</strong> Les frais de livraison (2 $) ne sont pas inclus.</p>
+
+  <button onclick="envoyerCommande()">Valider la commande</button>
+
+  <script>
+    function envoyerCommande() {
+      const prenom = document.getElementById("prenom").value;
+      const nom = document.getElementById("nom").value;
+      const adresse = document.getElementById("adresse").value;
+      const numero = document.getElementById("numero").value;
+      const commande = document.getElementById("commande").value;
+
+      const message = `Bonjour JIJI STORE 👃🌸%0AJe passe une commande :%0A🧍 Prénom : ${prenom}%0A🧍 Nom : ${nom}%0A📍 Adresse : ${adresse}%0A📞 Numéro : ${numero}%0A📦 Commande : ${commande}%0A🚚 Livraison : 2 $`;
+
+      const whatsappURL = `https://wa.me/243859016770?text=${message}`;
+
+      window.open(whatsappURL, '_blank');
+    }
+  </script>
+
+</body>
+</html>
